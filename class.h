@@ -47,11 +47,11 @@ class LIB
     }
 
 	//students section
-	void add_student();
+	void add_student(); //done
 	void remove_student();
 	void edit_student();
 	void stud_details();
-	void show_all_stud();
+	void show_all_stud(); //done
 
 	//books section
 	void add_book();
