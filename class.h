@@ -11,7 +11,7 @@ class LIB
 	{
 		string name;
 		string author;
-		int price;
+		float price;
 		int quantity;
         int remaining;
 		int id;
@@ -59,5 +59,6 @@ class LIB
 	void edit_book();
 	void lend_book();
 	void return_book();
+	void show_all_books();
 	
 };
