@@ -55,8 +55,8 @@ class LIB
 
 	//books section
 	void add_book(); //done
-	void remove_book();//done
-	void edit_book();//done
+	void remove_book(); //done
+	void edit_book(); //done
 	void lend_book();
 	void return_book();
 	void show_all_books(); //done
