@@ -7,6 +7,8 @@ void LIB::add_book()
     tmp = new booknode;
     if(!tmp == 0)
     {
+
+        tmp->borrowers=NULL;
         cout<<"Enter Book Name: ";
         getline(cin,tmp->name);
         
@@ -184,30 +186,46 @@ void LIB::lend_book()
 
     if(stmp==NULL)
     {
-        cout<<"Student not found";
+        cout<<"Student not found\n";
         return;
     }
 
+
     int count;
     count = 0;
-    borrowed * count_node;
+    borrowed * count_node, * b_node;
     count_node = stmp->borrowedbooks;
     
     while(count_node!=NULL)
     {
         count++;
+        count_node=count_node->next;
     }
     if(count>2)
     {
-        cout<<"Borrow limit reached, Student have already borrowed 3 Books.";
+        cout<<"Borrow limit reached, Student have already borrowed 3 Books.\n";
         return;
     }
 
     //borrow book
+    b_node = new borrowed;
+    b_node->id = sid;
+    b_node->next = NULL;
+    if(btmp->borrowers == NULL)
+    {
+        btmp->borrowers = b_node;
+    }
+    else
+    {
+        b_node->next = btmp->borrowers;
+        btmp->borrowers = b_node;
+    }
+
+
+
     count_node = new borrowed;
     count_node->id = bid;
     count_node->next = NULL;
-    
     if(stmp->borrowedbooks == NULL)
     {
         stmp->borrowedbooks = count_node;
@@ -275,17 +293,43 @@ void LIB::return_book()
 
     booknode * btmp;
     btmp = book_start;
-
     while(btmp!=NULL && btmp->id!=bid)
     {
         btmp= btmp->next;
     }
 
+//----------------------------------
+    count_node = btmp->borrowers;
+    prev_node = NULL;
+    while(count_node!=NULL && count_node->id!=sid)
+    {
+        prev_node=count_node;
+        count_node->next=count_node;
+    }
+
+    if(count_node==NULL)
+    {
+        cout<<"error finding borrower";
+        return;
+    }
+
+    if(prev_node==NULL)
+    {
+        delete btmp->borrowers;
+        btmp->borrowers=NULL;
+    }
+    else
+    {
+        prev_node->next = count_node->next;
+        delete count_node;
+    }
+
+
+
+
     btmp->remaining++;
     cout<<"Book returned successfully";
 
-
-   
 }
 
 void LIB::show_all_books()

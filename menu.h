@@ -4,5 +4,7 @@ void LIB::menu()
     add_book();
     lend_book();
     lend_book();
+    stud_details();
     return_book();
+    stud_details();
 }

@@ -179,7 +179,7 @@ void LIB::edit_student()
                 cin>>tmp->div;
                 break;
             case 5:
-                cout<<"Enter CLASS: ";
+                cout<<"Enter Contact: ";
                 cin>>tmp->contact;
                 break;
             case 0:
@@ -190,6 +190,44 @@ void LIB::edit_student()
         }
         
     } while (ch_es!=0);
-    
+}
+
+void LIB::stud_details()
+{
+    int id;
+    cout<<"Enter Student id: ";
+    cin>>id;
+    studentnode * tmp;
+    tmp = stud_start;
+    while(tmp!=NULL && tmp->id!=id)
+    {
+        tmp=tmp->next;
+    }
+
+    if(tmp==NULL)
+    {
+        cout<<"Student not found";
+        return;
+    }
+
+    cout<<"Student Name : "<<tmp->name<<endl;
+    cout<<"Student ADDRESS : "<<tmp->address<<endl;
+    cout<<"Student CLASS : "<<tmp->clas<<endl;
+    cout<<"Student DIV : "<<tmp->div<<endl;
+    cout<<"Student contact : "<<tmp->contact<<endl;
+
+    if(tmp->borrowedbooks==NULL)
+    {
+        cout<<"No books borrowed";
+        return;
+    }
+    cout<<"Borrowed book id's : ";
+    borrowed * tmp1;
+    tmp1 = tmp->borrowedbooks;
+    while(tmp1!=NULL)
+    {
+        cout<<tmp1->id<<" ";
+        tmp1=tmp1->next;
+    }
 
 }
