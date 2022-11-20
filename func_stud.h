@@ -38,7 +38,9 @@ void LIB::add_student()
         tmp->next = stud_start;
         stud_start=tmp; 
 
-        stud_count++;  
+        stud_count++;
+        cout<<"Student details added accessfully.\n";
+        cout<<"The student id is "<<tmp->id ;
 
 
             // cout<<tmp->id<<" "<<tmp->name<<" "<<tmp->address<<" " <<tmp->clas<<" "<<endl;
@@ -56,6 +58,7 @@ void LIB::add_student()
 
 void LIB::show_all_stud()
 {
+    
     if(stud_start==NULL)
     {
         cout<<"No student to display";
@@ -76,6 +79,7 @@ void LIB::show_all_stud()
             tmp=tmp->next;
         }
     }
+    
 }
 
 void LIB::remove_student()
@@ -160,7 +164,14 @@ void LIB::edit_student()
 
     do
     {
-        show_all_stud();
+        system("CLS");
+        cout<<"---------------------------------------------------------------------"<<endl;
+        cout<<"Student Name :     "<<tmp->name<<endl;
+        cout<<"Student ADDRESS :  "<<tmp->address<<endl;
+        cout<<"Student CLASS :    "<<tmp->clas<<endl;
+        cout<<"Student DIV :      "<<tmp->div<<endl;
+        cout<<"Student contact :  "<<tmp->contact<<endl;
+
         cout<<"--------------------------------------------------"<<endl;
         cout<<"\t1. Edit Name\n";
         cout<<"\t2. Edit address\n";

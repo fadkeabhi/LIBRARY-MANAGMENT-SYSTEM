@@ -1,7 +1,13 @@
-LIBRARY NAME=>LIBRARIAN NAME=>username=>password=>0=>3=>
+LIBRARY NAME=>LIBRARIAN NAME=>username=>password=>2=>3=>
 3=>Dnyameshwar Indrale=>latur=>SE=>A=>123456=>
 NULL
 2=>Aditya kale=>Baramati=>SE=>A=>12345678=>
 NULL
 1=>Palash Dhabale=>katol=>SA=>A=>123456789=>
+1
+NULL
+1=>name 1=>auther=>45=>12=>11=>
+1
+NULL
+1=>book 1=>auth1=>23=>32=>32=>
 NULL

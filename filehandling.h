@@ -2,6 +2,35 @@ void LIB::load()
 {
     ifstream ifile;
     ifile.open("data.txt");
+
+    if(!ifile)
+    {cout<<"File does noo exists.";
+
+    return;}
+
+    char restore;
+    do
+    {
+        cout<<"Would you like to restore old data. y/n :";
+        cin>>restore;
+        if(restore=='n' || restore=='N')
+        {
+            cin.ignore(1,'\n');
+            cout<<"Enter Library name  : ";
+            getline(cin,lib_name);
+            cout<<"Enter Librarian name: ";
+            getline(cin,librarian_name);
+            return;
+        }
+        else if(restore!='y' &&  restore!='Y')
+            cout<<"Wrong choise select option again.\n";
+        
+    } while (restore!='y' &&  restore!='Y');
+    cout<<"Restoring data...\n";
+    
+
+
+
     string s;
     string delim = "=>";
     int i,j;
@@ -136,6 +165,7 @@ void LIB::load()
         }
 
     }
+    ifile.close();
 
 
 
@@ -202,6 +232,9 @@ void LIB::save()
 		perror("error saving");
 	else
 		cout << "Done saving."<<endl;
+        
+    cout<<"\nPress Enter to continue.";
+     getch();
 
 
 
