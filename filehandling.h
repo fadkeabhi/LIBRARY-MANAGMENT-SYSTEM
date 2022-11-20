@@ -201,7 +201,7 @@ void LIB::save()
     if (rename("tmp.txt", "data.txt") != 0)
 		perror("error saving");
 	else
-		cout << "Done saving.";
+		cout << "Done saving."<<endl;
 
 
 
