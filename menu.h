@@ -10,4 +10,7 @@ void LIB::menu()
     // lend_book();
     // save();
     load();
+    show_all_stud();
+    show_all_books();
+    book_details();
 }
