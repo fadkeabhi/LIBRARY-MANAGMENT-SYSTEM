@@ -18,10 +18,10 @@ class LIB
 		booknode * next;
 	}*book_start;
 
-	struct borrowed_stud
+	struct borrowed
 	{
 		int id;
-		borrowed_stud * next;
+		borrowed * next;
 	};
 
 	struct studentnode
@@ -32,7 +32,7 @@ class LIB
 		string clas;
 		string div;
 		long long int contact;
-		borrowed_stud * borrowedbooks;
+		borrowed * borrowedbooks;
 		studentnode * next;
 	}*stud_start;
 
@@ -57,7 +57,7 @@ class LIB
 	void add_book(); //done
 	void remove_book(); //done
 	void edit_book(); //done
-	void lend_book();
+	void lend_book(); //done
 	void return_book();
 	void show_all_books(); //done
 	
