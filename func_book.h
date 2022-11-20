@@ -349,3 +349,46 @@ void LIB::show_all_books()
         }
     }
 }
+
+
+void LIB::book_details()
+{
+    int id;
+    cout<<"Enter book id: ";
+    cin>>id;
+    booknode * tmp;
+    tmp = book_start;
+    while(tmp!=NULL && tmp->id!=id)
+    {
+        tmp=tmp->next;
+    }
+
+    if(tmp==NULL)
+    {
+        cout<<"Book not found";
+        return;
+    }
+
+    cout<<"Id of Book: "<<tmp->id<<endl;
+    cout<<"Name of Book: "<<tmp->name<<endl;
+    cout<<"Name of author: "<<tmp->author<<endl;
+    cout<<"Price of Book: "<<tmp->author<<endl;
+    cout<<"Total Quantity of Book: "<<tmp->quantity<<endl;
+    cout<<"Remaining Quantity of Book: "<<tmp->remaining<<endl;
+   
+
+    if(tmp->borrowers==NULL)
+    {
+        cout<<"No students have borrowed this book.";
+        return;
+    }
+    cout<<"Borrowed book id's : ";
+    borrowed * tmp1;
+    tmp1 = tmp->borrowers;
+    while(tmp1!=NULL)
+    {
+        cout<<tmp1->id<<" ";
+        tmp1=tmp1->next;
+    }
+
+}
