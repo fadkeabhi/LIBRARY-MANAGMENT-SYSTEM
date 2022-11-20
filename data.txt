@@ -1,9 +1,7 @@
-LIBRARY NAME=>LIBRARIAN NAME=>username=>password=>1=>3=>
-3=>aditya kale=>baramati=>SE=>A=>12345=>
+LIBRARY NAME=>LIBRARIAN NAME=>username=>password=>0=>3=>
+3=>Dnyameshwar Indrale=>latur=>SE=>A=>123456=>
 NULL
-2=>Abhishek Fadke=>pune=>1234=>234=>12345=>
+2=>Aditya kale=>Baramati=>SE=>A=>12345678=>
 NULL
-1=>palash Dhabale=>katol=>123=>2342=>1243546=>
-NULL
-1234=>rich Dad poor dad=>robert kiyosaki=>500=>3=>3=>
+1=>Palash Dhabale=>katol=>SA=>A=>123456789=>
 NULL

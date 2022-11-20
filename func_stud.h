@@ -7,16 +7,16 @@ void LIB::add_student()
     tmp = new studentnode;
     if(!tmp == 0)
     {
-        cout<<"Enter Student Name: ";
+        cout<<"Enter Student Name:           ";
         getline(cin,tmp->name);
         
-        cout<<"Enter Permanat address: ";
+        cout<<"Enter Permanat address:       ";
         getline(cin,tmp->address);
 
-        cout<<"Enter Student Class: ";
+        cout<<"Enter Student Class:          ";
         cin>>tmp->clas;
 
-        cout<<"Enter Student Div: ";
+        cout<<"Enter Student Div:            ";
         cin>>tmp->div;
 
         cout<<"Enter Student contact number: ";
