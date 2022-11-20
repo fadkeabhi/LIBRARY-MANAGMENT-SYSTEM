@@ -35,7 +35,9 @@ void LIB::add_student()
 
         //adding node to begining
         tmp->next = stud_start;
-        stud_start=tmp;    
+        stud_start=tmp; 
+
+        stud_count++;  
 
 
             // cout<<tmp->id<<" "<<tmp->name<<" "<<tmp->address<<" " <<tmp->clas<<" "<<endl;
@@ -124,6 +126,7 @@ void LIB::remove_student()
         }
     prev_tmp->next = tmp->next;
     delete tmp;
+    stud_count--;
 }
 
 
