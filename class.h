@@ -36,10 +36,6 @@ class LIB
 		studentnode * next;
 	}*stud_start;
 
-    
-
-
-
 
 	public:
     LIB()
@@ -49,6 +45,7 @@ class LIB
         book_start = NULL;
         stud_start = NULL;
     }
+
 	//students section
 	void add_student();
 	void remove_student();
@@ -56,5 +53,11 @@ class LIB
 	void stud_details();
 	void show_all_stud();
 
+	//books section
+	void add_book();
+	void remove_book();
+	void edit_book();
+	void lend_book();
+	void return_book();
 	
 };
