@@ -31,7 +31,7 @@ class LIB
 		string address;
 		string clas;
 		string div;
-		long contact;
+		long long int contact;
 		borrowed_stud * borrowedbooks;
 		studentnode * next;
 	}*stud_start;

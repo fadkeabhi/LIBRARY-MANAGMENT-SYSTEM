@@ -107,6 +107,7 @@ void LIB::remove_student()
         prev_tmp=tmp;
         if(tmp->next==NULL)
         {
+            
             cout<<"Student not found.\n";
             return;
         }    
@@ -116,10 +117,76 @@ void LIB::remove_student()
 
 
     // actual deleting part
+    if(tmp->borrowedbooks != NULL)
+        {
+            cout<<"Cannot delete, Student have borrowed books.\n";
+            return;
+        }
     prev_tmp->next = tmp->next;
     delete tmp;
-
 }
 
 
 
+
+
+void LIB::edit_student()
+{
+    int id,ch_es;
+    cout<<"Enter student id to edit: ";
+    cin>>id;
+    studentnode * tmp;
+    tmp = stud_start;
+    while(tmp!=NULL && tmp->id!=id)
+    {
+        tmp=tmp->next;
+    }
+
+    if(tmp==NULL)
+    {
+        cout<<"Student not found";
+        return;
+    }
+
+    do
+    {
+        show_all_stud();
+        cout<<"\t1. Edit Name\n";
+        cout<<"\t2. Edit address\n";
+        cout<<"\t3. Edit class\n";
+        cout<<"\t4. Edit div\n";
+        cout<<"\t5. Edit contact\n";
+        cout<<"\t0. Exit edit menu\n";
+        cout<<"Enter your choise: ";
+        cin>>ch_es;
+        cin.ignore(1,'\n');
+        switch(ch_es)
+        {
+            case 1:
+                cout<<"Enter NAME: ";
+                getline(cin,tmp->name);
+                break;
+            case 2:
+                cout<<"Enter ADDRESS: ";
+                getline(cin,tmp->address);
+                break;
+            case 3:
+                cout<<"Enter CLASS: ";
+                cin>>tmp->clas;
+                break;
+            case 4:
+                cout<<"Enter DIV: ";
+                cin>>tmp->div;
+                break;
+            case 5:
+                cout<<"Enter CLASS: ";
+                cin>>tmp->contact;
+                break;
+            default:
+                cout<<"wrong choise ";
+        }
+        
+    } while (ch_es!=0);
+    
+
+}

@@ -12,13 +12,14 @@ int main()
 {
 	LIB obj;
 	obj.add_student();
-	obj.add_student();
-	obj.show_all_stud();
-	obj.remove_student();
-	obj.show_all_stud();
-	obj.remove_student();
-	obj.show_all_stud();
-	obj.remove_student();
-	obj.show_all_stud();
+	obj.edit_student();
+	// obj.add_student();
+	// obj.show_all_stud();
+	// obj.remove_student();
+	// obj.show_all_stud();
+	// obj.remove_student();
+	// obj.show_all_stud();
+	// obj.remove_student();
+	// obj.show_all_stud();
 	return 0;
 }
