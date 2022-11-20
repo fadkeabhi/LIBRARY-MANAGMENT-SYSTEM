@@ -1,4 +1,4 @@
-LIBRARY NAME=>LIBRARIAN NAME=>username=>password=>1=>2=>
+LIBRARY NAME=>LIBRARIAN NAME=>username=>password=>2=>2=>
 2=>stud 1=>add1=>cla=>di=>43567567=>
 234
 2454
@@ -10,4 +10,8 @@ NULL
 344=>sd=>fgdf=>34534=>434=>434=>
 345
 234
+NULL
+3423=>sd=>fgdf=>34534=>434=>434=>
+34532
+2343
 NULL

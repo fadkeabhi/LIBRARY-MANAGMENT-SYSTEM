@@ -11,6 +11,11 @@ void LIB::menu()
     // save();
     load();
     show_all_stud();
+    // stud_details();
+    // stud_details();
     show_all_books();
     book_details();
+    book_details();
+   
+
 }

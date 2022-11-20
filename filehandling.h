@@ -69,6 +69,7 @@ void LIB::load()
         while(true)
         {
             getline(ifile,s);
+            
             if(s=="NULL")
             {
                 break;
@@ -107,6 +108,7 @@ void LIB::load()
         bcurr->price=stof(arr[3]);
         bcurr->quantity=stoi(arr[4]);
         bcurr->remaining=stoi(arr[5]);
+        bcurr->borrowers=NULL;
 
 
         if(book_start==NULL)

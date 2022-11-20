@@ -241,7 +241,7 @@ void LIB::lend_book()
 }
 
 
-//todo
+
 void LIB::return_book()
 {
     cout<<"return book to Library.\n";
@@ -298,7 +298,7 @@ void LIB::return_book()
         btmp= btmp->next;
     }
 
-//----------------------------------
+
     count_node = btmp->borrowers;
     prev_node = NULL;
     while(count_node!=NULL && count_node->id!=sid)
@@ -382,7 +382,7 @@ void LIB::book_details()
         cout<<"No students have borrowed this book.";
         return;
     }
-    cout<<"Borrowed book id's : ";
+    cout<<"Borrowers id's : ";
     borrowed * tmp1;
     tmp1 = tmp->borrowers;
     while(tmp1!=NULL)
