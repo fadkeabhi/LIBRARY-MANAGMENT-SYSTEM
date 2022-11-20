@@ -1,3 +1,3 @@
-#include<iostream>
-#include<fstream>
-#include<string>
+
+
+	return 0;

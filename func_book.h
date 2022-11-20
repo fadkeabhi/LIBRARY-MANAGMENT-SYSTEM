@@ -1,6 +1,7 @@
 
 void LIB::add_book()
 {
+    cout<<"---------------------------------------"<<endl;
     cout<<"Adding new book to Library.\n";
 
     booknode * tmp;
@@ -9,20 +10,20 @@ void LIB::add_book()
     {
 
         tmp->borrowers=NULL;
-        cout<<"Enter Book Name: ";
+        cout<<"Enter Book Name:       ";
         getline(cin,tmp->name);
         
-        cout<<"Enter author name: ";
+        cout<<"Enter author name:     ";
         getline(cin,tmp->author);
 
-        cout<<"Enter price of book: ";
+        cout<<"Enter price of book:   ";
         cin>>tmp->price;
 
-        cout<<"Enter Book Quantity: ";
+        cout<<"Enter Book Quantity:   ";
         cin>>tmp->quantity;
         tmp->remaining=tmp->quantity;
 
-        cout<<"Enter UniqueID of book: ";
+        cout<<"Enter UniqueID of book:";
         cin>>tmp->id;
         cin.ignore(1,'\n');
 
@@ -30,10 +31,6 @@ void LIB::add_book()
         tmp->next = book_start;
         book_start=tmp;
         book_count++;
-
-
-            // cout<<tmp->id<<" "<<tmp->name<<" "<<tmp->address<<" " <<tmp->clas<<" "<<endl;
-            // cout<<tmp->div<<" " <<tmp->contact<<" " ;
     }
     
     else
@@ -85,6 +82,7 @@ void LIB::remove_book()
 
 void LIB::edit_book()
 {
+    cout<<"-----------------------------------------------"<<endl;
     cout<<"edit book from Library.\n";
 
     booknode * tmp;
@@ -146,6 +144,7 @@ void LIB::edit_book()
 
 void LIB::lend_book()
 {
+    cout<<"--------------------------------------------"<<endl;
     cout<<"lend a book from Library.\n";
     int bid,sid;
     booknode * btmp;
@@ -244,6 +243,7 @@ void LIB::lend_book()
 
 void LIB::return_book()
 {
+    cout<<"-----------------------------------------------------"<<endl;
     cout<<"return book to Library.\n";
     int sid,bid;
     cout<<"Enter Student id: ";
@@ -344,8 +344,14 @@ void LIB::show_all_books()
         tmp = book_start;
         while(tmp!=NULL)
         {
-            cout<<tmp->name<<" "<<tmp->author<<" "<<tmp->price<<" " <<tmp->quantity<<" "<<tmp->remaining<<" " <<tmp->id<<" "<<endl;
+            cout<<"Book name:         "<<tmp->name<<"\n";
+            cout<<"Author name:       "<<tmp->author<<"\n";
+            cout<<"Book price:        "<<tmp->price<<"\n" ;
+            cout<<"Quantity of books: "<<tmp->quantity<<"\n";
+            cout<<"Remaining books:   "<<tmp->remaining<<"\n" ;
+            cout<<"Book ID:           "<<tmp->id<<endl;
             tmp=tmp->next;
+            cout<<"-----------------------------------------------------------"<<endl;
         }
     }
 }
@@ -368,12 +374,12 @@ void LIB::book_details()
         cout<<"Book not found";
         return;
     }
-
-    cout<<"Id of Book: "<<tmp->id<<endl;
-    cout<<"Name of Book: "<<tmp->name<<endl;
-    cout<<"Name of author: "<<tmp->author<<endl;
-    cout<<"Price of Book: "<<tmp->author<<endl;
-    cout<<"Total Quantity of Book: "<<tmp->quantity<<endl;
+  
+    cout<<"Id of Book:                 "<<tmp->id<<endl;
+    cout<<"Name of Book:               "<<tmp->name<<endl;
+    cout<<"Name of author:             "<<tmp->author<<endl;
+    cout<<"Price of Book:              "<<tmp->author<<endl;
+    cout<<"Total Quantity of Book:     "<<tmp->quantity<<endl;
     cout<<"Remaining Quantity of Book: "<<tmp->remaining<<endl;
    
 

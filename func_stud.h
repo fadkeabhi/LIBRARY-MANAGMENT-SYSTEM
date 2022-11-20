@@ -1,5 +1,6 @@
 void LIB::add_student()
 {
+    cout<<"--------------------------------------"<<endl;
     cout<<"Adding new student.\n";
 
     studentnode * tmp;
@@ -65,7 +66,13 @@ void LIB::show_all_stud()
         tmp = stud_start;
         while(tmp!=NULL)
         {
-            cout<<tmp->id<<" "<<tmp->name<<" "<<tmp->address<<" " <<tmp->clas<<" "<<tmp->div<<" " <<tmp->contact<<" "<<endl;
+            // cout<<tmp->id<<" "<<tmp->name<<" "<<tmp->address<<" " <<tmp->clas<<" "<<tmp->div<<" " <<tmp->contact<<" "<<endl;
+                cout<<"---------------------------------------------------------------------"<<endl;
+                cout<<"Student Name :     "<<tmp->name<<endl;
+                cout<<"Student ADDRESS :  "<<tmp->address<<endl;
+                cout<<"Student CLASS :    "<<tmp->clas<<endl;
+                cout<<"Student DIV :      "<<tmp->div<<endl;
+                cout<<"Student contact :  "<<tmp->contact<<endl;
             tmp=tmp->next;
         }
     }
@@ -154,6 +161,7 @@ void LIB::edit_student()
     do
     {
         show_all_stud();
+        cout<<"--------------------------------------------------"<<endl;
         cout<<"\t1. Edit Name\n";
         cout<<"\t2. Edit address\n";
         cout<<"\t3. Edit class\n";
@@ -212,12 +220,12 @@ void LIB::stud_details()
         cout<<"Student not found";
         return;
     }
-
-    cout<<"Student Name : "<<tmp->name<<endl;
-    cout<<"Student ADDRESS : "<<tmp->address<<endl;
-    cout<<"Student CLASS : "<<tmp->clas<<endl;
-    cout<<"Student DIV : "<<tmp->div<<endl;
-    cout<<"Student contact : "<<tmp->contact<<endl;
+    cout<<"------------------------------------------"<<endl;
+    cout<<"Student Name :     "<<tmp->name<<endl;
+    cout<<"Student ADDRESS :  "<<tmp->address<<endl;
+    cout<<"Student CLASS :    "<<tmp->clas<<endl;
+    cout<<"Student DIV :      "<<tmp->div<<endl;
+    cout<<"Student contact :  "<<tmp->contact<<endl;
 
     if(tmp->borrowedbooks==NULL)
     {
