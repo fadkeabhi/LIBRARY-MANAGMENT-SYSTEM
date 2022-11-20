@@ -40,6 +40,7 @@ class LIB
 	}*stud_start;
 
 
+
 	public:
     LIB()
     {
@@ -63,6 +64,7 @@ class LIB
 	void lend_book(); //done
 	void return_book(); //done
 	void show_all_books(); //done
+	void book_details();
 	
 	//menu section
 	void menu();

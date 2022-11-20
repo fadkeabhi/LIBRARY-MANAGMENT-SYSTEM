@@ -7,4 +7,5 @@ void LIB::menu()
     stud_details();
     return_book();
     stud_details();
+    book_details();
 }
