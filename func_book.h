@@ -152,7 +152,7 @@ void LIB::lend_book()
     btmp = book_start;
     stmp = stud_start;
     
-    cout<<"Enter book id to lend: ";
+    cout<<"Enter book id to lend:     ";
     cin>>bid;
 
     while(btmp != NULL && btmp->id!=bid)
@@ -235,7 +235,8 @@ void LIB::lend_book()
         stmp->borrowedbooks = count_node;
     }
     btmp->remaining--;
-    cout<<"Book issued";
+    cout<<"Book issued "<<endl;
+    cout<<"-------------------"<<endl;
 
 }
 
@@ -246,7 +247,7 @@ void LIB::return_book()
     cout<<"-----------------------------------------------------"<<endl;
     cout<<"return book to Library.\n";
     int sid,bid;
-    cout<<"Enter Student id: ";
+    cout<<"Enter Student id:    ";
     cin>>sid;
 
     studentnode * stmp;
@@ -275,7 +276,7 @@ void LIB::return_book()
 
     if(count_node==NULL)
     {
-        cout<<"Student have not borrowed thid book.";
+        cout<<"Student have not borrowed third book.";
         return;
     }
 
@@ -328,7 +329,8 @@ void LIB::return_book()
 
 
     btmp->remaining++;
-    cout<<"Book returned successfully";
+    cout<<"Book returned successfully  \n";
+    cout<<"------------------------"<<endl;
 
 }
 
