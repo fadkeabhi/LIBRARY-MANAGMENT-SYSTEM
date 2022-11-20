@@ -227,6 +227,63 @@ void LIB::lend_book()
 void LIB::return_book()
 {
     cout<<"return book to Library.\n";
+    int sid,bid;
+    cout<<"Enter Student id: ";
+    cin>>sid;
+
+    studentnode * stmp;
+    stmp=stud_start;
+    while(stmp != NULL && stmp->id!=sid)
+    {
+        stmp=stmp->next;
+    }
+
+    if(stmp==NULL)
+    {
+        cout<<"Student not found";
+        return;
+    }
+
+    cout<<"Enter Book id: ";
+    cin>>bid;
+    borrowed * count_node, * prev_node;
+    count_node = stmp->borrowedbooks;
+    prev_node = NULL;
+    while(count_node!=NULL && count_node->id!=bid)
+    {
+        prev_node=count_node;
+        count_node->next=count_node;
+    }
+
+    if(count_node==NULL)
+    {
+        cout<<"Student have not borrowed thid book.";
+        return;
+    }
+
+    //actual return
+    if(prev_node==NULL)
+    {
+        delete stmp->borrowedbooks;
+        stmp->borrowedbooks=NULL;
+    }
+    else
+    {
+        prev_node->next = count_node->next;
+        delete count_node;
+    }
+
+    booknode * btmp;
+    btmp = book_start;
+
+    while(btmp!=NULL && btmp->id!=bid)
+    {
+        btmp= btmp->next;
+    }
+
+    btmp->remaining++;
+    cout<<"Book returned successfully";
+
 
    
 }
