@@ -61,4 +61,6 @@ class LIB
 	void return_book();
 	void show_all_books(); //done
 	
+	//menu section
+	void menu();
 };
