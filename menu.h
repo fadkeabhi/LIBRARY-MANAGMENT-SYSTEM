@@ -4,4 +4,5 @@ void LIB::menu()
     add_book();
     lend_book();
     lend_book();
+    return_book();
 }
