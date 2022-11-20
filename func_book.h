@@ -102,6 +102,14 @@ void LIB::edit_book()
     }
     do
     {
+        system("CLS");
+        cout<<"Book ID:           "<<tmp->id<<endl;
+        cout<<"Book name:         "<<tmp->name<<"\n";
+        cout<<"Author name:       "<<tmp->author<<"\n";
+        cout<<"Book price:        "<<tmp->price<<"\n" ;
+        cout<<"Quantity of books: "<<tmp->quantity<<"\n";
+        cout<<"Remaining books:   "<<tmp->remaining<<"\n" ;
+        cout<<"-----------------------------------------------------------"<<endl;
         
 
         cout<<"\t1.Edit Name of book\n";
@@ -276,7 +284,7 @@ void LIB::return_book()
 
     if(count_node==NULL)
     {
-        cout<<"Student have not borrowed third book.";
+        cout<<"Student have not borrowed this book.";
         return;
     }
 
@@ -346,12 +354,12 @@ void LIB::show_all_books()
         tmp = book_start;
         while(tmp!=NULL)
         {
+            cout<<"Book ID:           "<<tmp->id<<endl;
             cout<<"Book name:         "<<tmp->name<<"\n";
             cout<<"Author name:       "<<tmp->author<<"\n";
             cout<<"Book price:        "<<tmp->price<<"\n" ;
             cout<<"Quantity of books: "<<tmp->quantity<<"\n";
             cout<<"Remaining books:   "<<tmp->remaining<<"\n" ;
-            cout<<"Book ID:           "<<tmp->id<<endl;
             tmp=tmp->next;
             cout<<"-----------------------------------------------------------"<<endl;
         }

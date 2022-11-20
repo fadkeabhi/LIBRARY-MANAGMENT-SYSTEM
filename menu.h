@@ -1,10 +1,11 @@
 void LIB::menu()
 {
 
-    cout << "*****WELCOME TO OUR " << lib_name << " LIBRARY******" << endl;
     int ch;
     do
     {
+        system("CLS");
+        cout << "*****WELCOME TO " << lib_name << " ******" << endl;
         cout << "\t1. Student Details.\n";
         cout << "\t2. Book section. \n";
         cout << "\t3. Save Data. \n";
@@ -30,11 +31,22 @@ void LIB::menu()
         }
     } while (ch != 0);
 }
+
+
 void LIB::stud_menu()
 {
     int ch1;
+    bool frommenu=1;
     do
     {
+        if(frommenu==0)
+        {
+            cout<<"\nPress Enter to continue.";
+            getch();
+        }
+        frommenu=0;
+        
+        system("CLS");
         cout << "***STUDENT SECTION***" << endl;
         cout << "\t1. Add Student Data.\n";
         cout << "\t2. Delete Student Data.\n ";
@@ -45,6 +57,7 @@ void LIB::stud_menu()
         cout<<"Enter Choice: ";
         cin >> ch1;
         cin.ignore(1,'\n');
+        system("CLS");
         switch (ch1)
         {
         case 1:
@@ -75,8 +88,18 @@ void LIB::stud_menu()
 void LIB::book_menu()
 {
     int ch2;
+
+    bool frommenu=1;
     do
     {
+        if(frommenu==0)
+        {
+            cout<<"\nPress Enter to continue.";
+            getch();
+        }
+        frommenu=0;
+        
+        system("CLS");
         cout << "***BOOK SECTION***" << endl;
         cout << "\t1. Add Book Data.\n";
         cout << "\t2. Remove Book Data.\n ";
@@ -89,6 +112,7 @@ void LIB::book_menu()
         cout<<"Enter Choice: ";
         cin >> ch2;
         cin.ignore(1,'\n');
+        system("CLS");
         switch (ch2)
         {
         case 1:

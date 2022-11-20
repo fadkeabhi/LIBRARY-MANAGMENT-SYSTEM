@@ -1,6 +1,8 @@
+#include<stdlib.h>
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<conio.h>
 
 
 using namespace std;
@@ -15,6 +17,8 @@ using namespace std;
 int main()
 {
 	LIB obj;
+
+	obj.load();
 	obj.menu();
 
 	return 0;

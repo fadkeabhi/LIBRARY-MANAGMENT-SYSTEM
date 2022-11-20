@@ -77,6 +77,7 @@ class LIB
 	
 	//menu section
 	void menu();
-	void stud_menu();
 	void book_menu();
+	void stud_menu();
+	//void book_menu();
 };
