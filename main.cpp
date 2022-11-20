@@ -2,7 +2,8 @@
 using namespace std;
 
 #include "class.h"
-#include "func.h"
+#include "func_stud.h"
+#include "func_book.h"
 
 
 

@@ -41,6 +41,7 @@ void LIB::add_student()
             // cout<<tmp->id<<" "<<tmp->name<<" "<<tmp->address<<" " <<tmp->clas<<" "<<endl;
             // cout<<tmp->div<<" " <<tmp->contact<<" " ;
     }
+    
     else
     {
         cout<<"Memory limit exceded";
