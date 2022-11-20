@@ -6,6 +6,12 @@ class LIB
 	string password;
 
 	int book_count,stud_count;
+	struct borrowed
+	{
+		int id;
+		borrowed * next;
+	};
+
 
 	struct booknode
 	{
@@ -16,13 +22,10 @@ class LIB
         int remaining;
 		int id;
 		booknode * next;
+		borrowed * borrowers;
 	}*book_start;
 
-	struct borrowed
-	{
-		int id;
-		borrowed * next;
-	};
+
 
 	struct studentnode
 	{
@@ -50,7 +53,7 @@ class LIB
 	void add_student(); //done
 	void remove_student(); //done
 	void edit_student(); //done
-	void stud_details();
+	void stud_details(); //done
 	void show_all_stud(); //done
 
 	//books section
@@ -58,7 +61,7 @@ class LIB
 	void remove_book(); //done
 	void edit_book(); //done
 	void lend_book(); //done
-	void return_book();
+	void return_book(); //done
 	void show_all_books(); //done
 	
 	//menu section
