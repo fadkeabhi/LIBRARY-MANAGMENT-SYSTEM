@@ -182,6 +182,9 @@ void LIB::edit_student()
                 cout<<"Enter CLASS: ";
                 cin>>tmp->contact;
                 break;
+            case 0:
+                cout<<"Exiting Edit Menu...";
+                break;
             default:
                 cout<<"wrong choise ";
         }

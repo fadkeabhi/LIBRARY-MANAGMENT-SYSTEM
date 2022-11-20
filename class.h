@@ -47,18 +47,18 @@ class LIB
     }
 
 	//students section
-	void add_student();//done
-	void remove_student();//done
-	void edit_student();//done
+	void add_student(); //done
+	void remove_student(); //done
+	void edit_student(); //done
 	void stud_details();
-	void show_all_stud();//done
+	void show_all_stud(); //done
 
 	//books section
-	void add_book();//done
+	void add_book(); //done
 	void remove_book();
 	void edit_book();
 	void lend_book();
 	void return_book();
-	void show_all_books();//done
+	void show_all_books(); //done
 	
 };
