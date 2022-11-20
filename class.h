@@ -48,6 +48,11 @@ class LIB
         stud_count = 0;
         book_start = NULL;
         stud_start = NULL;
+
+		lib_name = "LIBRARY NAME";
+		librarian_name = "LIBRARIAN NAME";
+		username = "username";
+		password = "password";
     }
 
 	//students section
@@ -64,7 +69,11 @@ class LIB
 	void lend_book(); //done
 	void return_book(); //done
 	void show_all_books(); //done
-	void book_details();
+	void book_details(); //done
+
+	//file handling
+	void save();
+	void load();
 	
 	//menu section
 	void menu();
