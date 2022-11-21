@@ -24,6 +24,7 @@ void LIB::menu()
             save();
             break;
         case 0:
+            save();
             exit(0);
         default:
             cout << "*Wrong Choice*" << endl;
