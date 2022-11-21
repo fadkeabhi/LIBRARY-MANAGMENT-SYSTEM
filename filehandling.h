@@ -4,9 +4,18 @@ void LIB::load()
     ifile.open("data.txt");
 
     if(!ifile)
-    {cout<<"File does noo exists.";
-
-    return;}
+    {
+        cout<<"New installation detected.\n";
+        cout<<"Enter Library name  : ";
+        getline(cin,lib_name);
+        cout<<"Enter Librarian name: ";
+        getline(cin,librarian_name);
+        cout<<"Enter Username: ";
+        getline(cin,username);
+        cout<<"Enter password: ";
+        getline(cin,password);
+        return;
+    }
 
     char restore;
     do
@@ -20,23 +29,38 @@ void LIB::load()
             getline(cin,lib_name);
             cout<<"Enter Librarian name: ";
             getline(cin,librarian_name);
+            cout<<"Enter Username: ";
+            getline(cin,username);
+            cout<<"Enter password: ";
+            getline(cin,password);
             return;
         }
         else if(restore!='y' &&  restore!='Y')
             cout<<"Wrong choise select option again.\n";
         
     } while (restore!='y' &&  restore!='Y');
-    cout<<"Restoring data...\n";
-    
 
-
-
+    //password validation
+    cout<<"Enter your password: ";
+    cin>>password;
     string s;
+    getline(ifile,s);
+    if(password!=decrypt(s,"This is an master password"))
+    {
+        cout<<"password is incorrect.";
+        exit(0);
+    }
+
+
+    cout<<"Restoring data...\n";
+ 
+    
     string delim = "=>";
     int i,j;
 
     
     getline(ifile,s);
+    s = decrypt(s,password);
     string arr[6];
     auto start = 0U;
     auto end = s.find(delim);
@@ -64,6 +88,7 @@ void LIB::load()
     {   
         
         getline(ifile,s);
+        s = decrypt(s,password);
         auto start = 0U;
         auto end = s.find(delim);
         j = 0;
@@ -98,6 +123,7 @@ void LIB::load()
         while(true)
         {
             getline(ifile,s);
+            s = decrypt(s,password);
             
             if(s=="NULL")
             {
@@ -112,12 +138,14 @@ void LIB::load()
 
     }
 
-    //load student details
+    //load book details
     booknode * bcurr, * bprev;
     for(i = 0; i<book_count;i++)
     {   
         
         getline(ifile,s);
+        s = decrypt(s,password);
+        
         auto start = 0U;
         auto end = s.find(delim);
         j = 0;
@@ -153,6 +181,8 @@ void LIB::load()
         while(true)
         {
             getline(ifile,s);
+            s = decrypt(s,password);
+            
             if(s=="NULL")
             {
                 break;
@@ -176,15 +206,17 @@ void LIB::load()
 void LIB::save()
 {
     ofstream ofile;
+    string text;
     ofile.open("tmp.txt",ios::trunc);
-//saving library details
 
-    ofile<<lib_name<<"=>";
-    ofile<<librarian_name<<"=>";
-    ofile<<username<<"=>";
-    ofile<<password<<"=>";
-    ofile<<book_count<<"=>";
-    ofile<<stud_count<<"=>"<<endl;
+
+    //saving password
+    text = password;
+    ofile<<encrypt(text,"This is an master password")<<endl;
+
+//saving library details
+    text=lib_name+"=>"+librarian_name+"=>"+username+"=>"+password+"=>"+to_string(book_count)+"=>"+to_string(stud_count)+"=>";
+    ofile<<encrypt(text,password)<<endl;
     
 
 
@@ -196,14 +228,16 @@ void LIB::save()
     tmp = stud_start;
     while(tmp!=NULL)
     {
-        ofile<<tmp->id<<"=>"<<tmp->name<<"=>"<<tmp->address<<"=>" <<tmp->clas<<"=>"<<tmp->div<<"=>" <<tmp->contact<<"=>" <<endl;
+        text = to_string(tmp->id)+"=>"+tmp->name+"=>"+tmp->address+"=>" +tmp->clas+"=>"+tmp->div+"=>" +to_string(tmp->contact)+"=>";
+        ofile<<encrypt(text,password)<<endl;
+
         borrow =tmp->borrowedbooks ;
         while(borrow!=NULL)
         {
-            ofile<<borrow->id<<endl;
+            ofile<<encrypt(to_string(borrow->id),password)<<endl;
             borrow=borrow->next;
         }
-        ofile<<"NULL"<<endl;
+        ofile<<encrypt("NULL",password)<<endl;
         
         tmp=tmp->next;
     }
@@ -214,14 +248,15 @@ void LIB::save()
     tmp1 = book_start;
     while(tmp1!=NULL)
     {
-        ofile<<tmp1->id<<"=>" <<tmp1->name<<"=>" <<tmp1->author<<"=>" <<tmp1->price<<"=>" <<tmp1->quantity<<"=>" <<tmp1->remaining<<"=>" <<endl;
-        borrow =tmp1->borrowers ;
+        text=to_string(tmp1->id)+"=>"+tmp1->name+"=>"+tmp1->author+"=>"+to_string(tmp1->price)+"=>"+to_string(tmp1->quantity)+"=>"+to_string(tmp1->remaining)+"=>";
+        ofile<<encrypt(text,password)<<endl;        
+        borrow =tmp1->borrowers;
         while(borrow!=NULL)
         {
-            ofile<<borrow->id<<endl;
+            ofile<<encrypt(to_string(borrow->id),password)<<endl;
             borrow=borrow->next;
         }
-        ofile<<"NULL"<<endl;
+        ofile<<encrypt("NULL",password)<<endl;
         
         tmp1=tmp1->next;
     }
