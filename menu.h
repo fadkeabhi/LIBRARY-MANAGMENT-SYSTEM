@@ -5,7 +5,7 @@ void LIB::menu()
     do
     {
         system("CLS");
-        cout << "*****WELCOME TO " << lib_name << " ******" << endl;
+        cout << "***** WELCOME TO " << lib_name << " ******" << endl;
         cout << "\t1. Student Details.\n";
         cout << "\t2. Book section. \n";
         cout << "\t3. Save Data. \n";
@@ -24,6 +24,7 @@ void LIB::menu()
             save();
             break;
         case 0:
+            save();
             exit(0);
         default:
             cout << "*Wrong Choice*" << endl;

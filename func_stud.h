@@ -1,7 +1,7 @@
 void LIB::add_student()
 {
-    cout<<"--------------------------------------"<<endl;
-    cout<<"Adding new student.\n";
+    cout<<"***************************************"<<endl;
+    cout<<"Adding new Student.\n";
 
     studentnode * tmp;
     tmp = new studentnode;
@@ -10,7 +10,7 @@ void LIB::add_student()
         cout<<"Enter Student Name:           ";
         getline(cin,tmp->name);
         
-        cout<<"Enter Permanat address:       ";
+        cout<<"Enter Permanat Address:       ";
         getline(cin,tmp->address);
 
         cout<<"Enter Student Class:          ";
@@ -40,7 +40,7 @@ void LIB::add_student()
 
         stud_count++;
         cout<<"Student details added accessfully.\n";
-        cout<<"The student id is "<<tmp->id ;
+        cout<<"The student ID is "<<tmp->id ;
 
 
             // cout<<tmp->id<<" "<<tmp->name<<" "<<tmp->address<<" " <<tmp->clas<<" "<<endl;
@@ -61,7 +61,7 @@ void LIB::show_all_stud()
     
     if(stud_start==NULL)
     {
-        cout<<"No student to display";
+        cout<<"No Student to display";
     }
     else
     {
@@ -70,12 +70,12 @@ void LIB::show_all_stud()
         while(tmp!=NULL)
         {
             // cout<<tmp->id<<" "<<tmp->name<<" "<<tmp->address<<" " <<tmp->clas<<" "<<tmp->div<<" " <<tmp->contact<<" "<<endl;
-                cout<<"---------------------------------------------------------------------"<<endl;
+                cout<<"************************************************************"<<endl;
                 cout<<"Student Name :     "<<tmp->name<<endl;
                 cout<<"Student ADDRESS :  "<<tmp->address<<endl;
                 cout<<"Student CLASS :    "<<tmp->clas<<endl;
                 cout<<"Student DIV :      "<<tmp->div<<endl;
-                cout<<"Student contact :  "<<tmp->contact<<endl;
+                cout<<"Student Contact :  "<<tmp->contact<<endl;
             tmp=tmp->next;
         }
     }
@@ -86,14 +86,14 @@ void LIB::remove_student()
 {
     if(stud_start==NULL)
     {
-        cout<<"No student to delete\n";
+        cout<<"No Student to delete\n";
         return;
     }
 
     int id;
     studentnode * tmp, * prev_tmp;
    
-    cout<<"Enter student id to delete.";
+    cout<<"Enter Student ID to delete.";
     cin>>id;
 
     //is node at first place
@@ -102,7 +102,7 @@ void LIB::remove_student()
         //check if student have borrowed books
         if(stud_start->borrowedbooks!=NULL)
         {
-            cout<<"Cannot delete, Student have borrowed books.\n";
+            cout<<"Cannot delete, Student have borrowed Books.\n";
             return;
         }
         tmp = stud_start->next;
@@ -147,7 +147,7 @@ void LIB::remove_student()
 void LIB::edit_student()
 {
     int id,ch_es;
-    cout<<"Enter student id to edit: ";
+    cout<<"Enter Student ID to edit: ";
     cin>>id;
     studentnode * tmp;
     tmp = stud_start;
@@ -165,14 +165,14 @@ void LIB::edit_student()
     do
     {
         system("CLS");
-        cout<<"---------------------------------------------------------------------"<<endl;
+        cout<<"***********************************************************"<<endl;
         cout<<"Student Name :     "<<tmp->name<<endl;
         cout<<"Student ADDRESS :  "<<tmp->address<<endl;
         cout<<"Student CLASS :    "<<tmp->clas<<endl;
         cout<<"Student DIV :      "<<tmp->div<<endl;
         cout<<"Student contact :  "<<tmp->contact<<endl;
 
-        cout<<"--------------------------------------------------"<<endl;
+        cout<<"*******************************************************************"<<endl;
         cout<<"\t1. Edit Name\n";
         cout<<"\t2. Edit address\n";
         cout<<"\t3. Edit class\n";
@@ -217,7 +217,7 @@ void LIB::edit_student()
 void LIB::stud_details()
 {
     int id;
-    cout<<"Enter Student id: ";
+    cout<<"Enter Student ID: ";
     cin>>id;
     studentnode * tmp;
     tmp = stud_start;
@@ -231,19 +231,19 @@ void LIB::stud_details()
         cout<<"Student not found";
         return;
     }
-    cout<<"------------------------------------------"<<endl;
+    cout<<"***************************************************"<<endl;
     cout<<"Student Name :     "<<tmp->name<<endl;
     cout<<"Student ADDRESS :  "<<tmp->address<<endl;
     cout<<"Student CLASS :    "<<tmp->clas<<endl;
     cout<<"Student DIV :      "<<tmp->div<<endl;
-    cout<<"Student contact :  "<<tmp->contact<<endl;
+    cout<<"Student Contact :  "<<tmp->contact<<endl;
 
     if(tmp->borrowedbooks==NULL)
     {
-        cout<<"No books borrowed";
+        cout<<"No Books borrowed";
         return;
     }
-    cout<<"Borrowed book id's : ";
+    cout<<"Borrowed Book ID's : ";
     borrowed * tmp1;
     tmp1 = tmp->borrowedbooks;
     while(tmp1!=NULL)

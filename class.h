@@ -71,6 +71,10 @@ class LIB
 	void show_all_books(); //done
 	void book_details(); //done
 
+	//encryption
+	string encrypt(string,string);
+	string decrypt(string,string);
+
 	//file handling
 	void save();
 	void load();

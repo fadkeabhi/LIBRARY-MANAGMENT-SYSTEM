@@ -11,6 +11,7 @@ using namespace std;
 #include "func_stud.h"
 #include "func_book.h"
 #include "menu.h"
+#include "fileecryption.h"
 #include "filehandling.h"
 
 
