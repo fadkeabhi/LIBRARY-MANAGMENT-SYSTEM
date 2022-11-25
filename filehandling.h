@@ -6,13 +6,13 @@ void LIB::load()
     if(!ifile)
     {
         cout<<"New installation detected.\n";
-        cout<<"Enter Library name  : ";
+        cout<<"Enter Library Name  : ";
         getline(cin,lib_name);
-        cout<<"Enter Librarian name: ";
+        cout<<"Enter Librarian Name: ";
         getline(cin,librarian_name);
         cout<<"Enter Username: ";
         getline(cin,username);
-        cout<<"Enter password: ";
+        cout<<"Enter Password: ";
         getline(cin,password);
         return;
     }
@@ -25,13 +25,13 @@ void LIB::load()
         if(restore=='n' || restore=='N')
         {
             cin.ignore(1,'\n');
-            cout<<"Enter Library name  : ";
+            cout<<"Enter Library Name  : ";
             getline(cin,lib_name);
-            cout<<"Enter Librarian name: ";
+            cout<<"Enter Librarian Name: ";
             getline(cin,librarian_name);
             cout<<"Enter Username: ";
             getline(cin,username);
-            cout<<"Enter password: ";
+            cout<<"Enter Password: ";
             getline(cin,password);
             return;
         }
@@ -41,13 +41,13 @@ void LIB::load()
     } while (restore!='y' &&  restore!='Y');
 
     //password validation
-    cout<<"Enter your password: ";
+    cout<<"Enter your Password: ";
     cin>>password;
     string s;
     getline(ifile,s);
-    if(password!=decrypt(s,"This is an master password"))
+    if(password!=decrypt(s,"This is an master Password"))
     {
-        cout<<"password is incorrect.";
+        cout<<"Password is incorrect.";
         exit(0);
     }
 
